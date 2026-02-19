@@ -61,13 +61,6 @@ app.get('/contact', (req, res) => {
 // TODO: Create a GET route for '/api/time'
 // It should return JSON with 'datetime' and 'timestamp' properties
 // Hint: Use res.json() to send JSON response
-app.get('/api/time', (req, res) => {
-    const now = new Date();
-    res.json({
-        datetime: now.toISOString(),
-        timestamp: now.getTime()
-    });
-});
 
 // ========================================
 // BONUS: Task 6 - Express Router (Optional)
@@ -75,11 +68,17 @@ app.get('/api/time', (req, res) => {
 // Organize API routes using Express Router
 // Complete section below to use Router:
 
-/*
+
 const apiRouter = express.Router();
 
 // Move the /api/time route to the router
-
+apiRouter.get('/time', (req, res) => {
+    const now = new Date();
+    res.json({
+        datetime: now.toISOString(),
+        timestamp: now.getTime()
+    });
+});
 
 // Add more API routes here if needed
 apiRouter.get('/info', (req, res) => {
@@ -92,7 +91,7 @@ apiRouter.get('/info', (req, res) => {
 
 // Mount the API router
 app.use('/api', apiRouter);
-*/
+
 
 
 // ========================================
